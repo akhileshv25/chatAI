@@ -1,0 +1,31 @@
+<div class="fullscreen-container">
+    <div class="chat-wrapper">
+        <div class="chat-header">
+            <div class="user-avatar">
+                <img src="assets/img.png" alt="User Avatar">
+            </div>
+            <span class="user-name">Chatbot</span>
+            <button class="chat-close-btn" (click)="closeChat()">&#10006;</button>
+        </div>
+
+        <div class="chat-content p-scrollPanel" #chatContent>
+            <div *ngFor="let msg of messages" class="message"
+                [ngClass]="{'user-msg': msg.sender === 'user', 'ai-msg': msg.sender === 'ai'}">
+                <div class="bubble">
+                    <span>{{ msg.text }}</span>
+                </div>
+            </div>
+            <div class="typing-indicator" *ngIf="isTyping">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <textarea pInputTextarea [(ngModel)]="userInput" placeholder="Type a message..." rows="1"
+                autoResize="true"></textarea>
+            <button pButton type="button" icon="pi pi-send" (click)="sendMessage()"></button>
+        </div>
+    </div>
+</div>
