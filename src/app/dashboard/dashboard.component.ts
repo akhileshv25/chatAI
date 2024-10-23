@@ -52,7 +52,9 @@ export class DashboardComponent {
         sender: msg.senderType,
         text: msg.content
       }));
-      this.scrollToBottom();
+      setTimeout(() => {
+        this.scrollToBottom();
+      }, 0);
     }, error => {
       console.error('Failed to fetch messages:', error);
     });

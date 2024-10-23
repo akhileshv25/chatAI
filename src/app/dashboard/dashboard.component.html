@@ -1,5 +1,5 @@
 <div class="fullscreen-container">
-    <div class="chat-wrapper">
+    <div class="chat-wrapper" >
         <div class="chat-header">
             <div class="user-avatar">
                 <img src="assets/img.png" alt="User Avatar">
@@ -8,7 +8,7 @@
             <button class="chat-close-btn" (click)="closeChat()">&#10006;</button>
         </div>
 
-        <div class="chat-content p-scrollPanel" #chatContent>
+        <div class="chat-content p-scrollPanel" #chatContent style="background-image: url('assets/backbround.jpg');" >
             <div *ngFor="let msg of messages" class="message"
                 [ngClass]="{'user-msg': msg.sender === 'user', 'ai-msg': msg.sender === 'ai'}">
                 <div class="bubble">

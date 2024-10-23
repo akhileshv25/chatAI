@@ -7,9 +7,12 @@
   }
   
   .chat-wrapper {
+    background-image: url('/assets/img.png'); 
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; 
     width: 400px;
-    height: 600px;
-    background-color: white;
+    height: 550px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -124,14 +127,14 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ffffff;
   }
   
   textarea {
     width: 85%;
     border-radius: 15px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 2px solid #9156f8;
   }
   
   button[pButton] {
