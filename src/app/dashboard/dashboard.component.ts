@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PanelModule } from 'primeng/panel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,7 @@ interface RasaResponse {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [HttpClientModule,CommonModule, PanelModule, InputTextareaModule, ButtonModule, FormsModule],
+  imports: [HttpClientModule,CommonModule, PanelModule, InputTextareaModule, ButtonModule, FormsModule ,ReactiveFormsModule, InputTextareaModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
@@ -41,8 +41,8 @@ export class DashboardComponent {
   isTyping = false;
   userId = 1;
   constructor(private http: HttpClient) {
-    this.sendGreetMessage();
-    this.fetchMessages();
+   // this.sendGreetMessage();
+   // this.fetchMessages();
   }
 
   fetchMessages() {

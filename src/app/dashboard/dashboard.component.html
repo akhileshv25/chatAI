@@ -23,9 +23,9 @@
         </div>
 
         <div class="chat-input-area">
-            <textarea pInputTextarea [(ngModel)]="userInput" placeholder="Type a message..." rows="1"
-                autoResize="true"></textarea>
-            <button pButton type="button" icon="pi pi-send" (click)="sendMessage()"></button>
+            <input pInputText [(ngModel)]="userInput" placeholder="Type a message..." (keydown.enter)="sendMessage()" />
+            <button pButton type="button" icon="pi pi-send" (click)="sendMessage()" [disabled]="!userInput"> </button>
         </div>
+        
     </div>
 </div>
