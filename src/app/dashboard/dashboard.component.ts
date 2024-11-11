@@ -43,6 +43,7 @@ export class DashboardComponent {
   constructor(private http: HttpClient) {
    // this.sendGreetMessage();
    // this.fetchMessages();
+   this.messages.push({ sender: 'ai', text: "Hello! How can I assist you today?" });
   }
 
   fetchMessages() {
@@ -66,12 +67,12 @@ export class DashboardComponent {
       const userMessage = this.userInput;
       this.messages.push({ sender: 'user', text: userMessage });
       this.isTyping = true;
-      this.storeChat('user', userMessage);
+     // this.storeChat('user', userMessage);
       this.sendToRasa(userMessage).subscribe(response => {
         this.isTyping = false;
         response.forEach((msg) => {
           this.messages.push({ sender: 'ai', text: msg.text });
-          this.storeChat('ai', msg.text);
+        //  this.storeChat('ai', msg.text);
         });
         setTimeout(() => {
           this.scrollToBottom();
